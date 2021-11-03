@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:orientation="horizontal"
+    android:paddingHorizontal="32dp"
+    android:weightSum="5">
+
+    <TextView
+        android:id="@+id/earthquake_magnitude"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:text="1.1"
+        android:textSize="16sp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/earthquake_location"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:text="San Francisco"
+        android:textSize="15sp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/earthquake_date"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:text="Jun 14, 1996"
+        android:textSize="16sp">
+
+    </TextView>
+
+
+</LinearLayout>
