@@ -33,9 +33,10 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
         eqMag.setText(String.valueOf(earthquake.getMagnitude()));
         eqLoc.setText(earthquake.getLocation());
-        String date = earthquake.getMonth() + " " + earthquake.getDay() + ", " + earthquake.getYear();
+//        String date = earthquake.getMonth() + " " + earthquake.getDay() + ", " + earthquake.getYear();
+//        eqDate.setText(date);
+        String date = earthquake.getDate();
         eqDate.setText(date);
-
         return listItemView;
 
 
