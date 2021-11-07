@@ -2,39 +2,45 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="88dp"
+    android:layout_height="?android:attr/listPreferredItemHeight"
     android:orientation="horizontal"
-    android:paddingHorizontal="32dp"
-    android:weightSum="5">
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
 
     <TextView
         android:id="@+id/earthquake_magnitude"
         android:layout_width="36dp"
-        android:layout_gravity="center_vertical"
         android:layout_height="36dp"
-        android:gravity="center"
-        tools:text="1.1"
-        android:textSize="16sp"
-        android:textColor="@color/white"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/magnitude_circle"
         android:fontFamily="sans-serif-medium"
-        android:background="@drawable/magnitude_circle">
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        tools:text="1.1">
 
     </TextView>
 
     <LinearLayout
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="2"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
         android:gravity="center_vertical"
-        android:orientation="vertical"
-        android:layout_marginHorizontal="16dp">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/earthquake_offset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Near of"
-            android:textSize="16sp">
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-medium"
+            android:maxLines="1"
+            android:textAllCaps="true"
+            android:textColor="@color/textColorEarthquakeDetails"
+            android:textSize="12sp"
+            tools:text="Near of">
 
 
         </TextView>
@@ -43,43 +49,47 @@
             android:id="@+id/earthquake_primaryLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            tools:text="San Francisco"
-            android:textColor="@color/black"
-            android:textSize="16sp">
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/textColorEarthquakeLocation"
+            android:textSize="16sp"
+            tools:text="San Francisco">
 
         </TextView>
-
 
 
     </LinearLayout>
 
 
-
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="2"
-        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="16dp"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/earthquake_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="end"
-            tools:text="Jun 14, 1996"
-            android:textSize="16sp">
+            android:layout_gravity="end"
+            android:textColor="@color/textColorEarthquakeDetails"
+            android:textSize="12sp"
+            tools:text="Jun 14, 1996">
 
         </TextView>
 
+<!--        layout_gravity of parent linear layout keeps it in vertical centre of list, then -->
+<!--        layout_gravity of below textview arranges it w.r.t. parent linear layout,-->
+<!--        which shoves it towards the end-->
         <TextView
             android:id="@+id/earthquake_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="10:00 PM"
-            android:gravity="end"
-            android:textSize="16sp">
+            android:layout_gravity="end"
+            android:textColor="@color/textColorEarthquakeDetails"
+            android:textSize="12sp"
+            tools:text="10:00 PM">
 
         </TextView>
     </LinearLayout>
