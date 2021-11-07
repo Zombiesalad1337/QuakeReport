@@ -61,9 +61,10 @@ public final class QueryUtils {
                 double mag = properties.getDouble("mag");
                 String place = properties.getString("place");
                 long timeMilliseconds = properties.getLong("time");
+                String url = properties.getString("url");
 
                 //TODO: convert time to date
-                Earthquake eq = new Earthquake(place, timeMilliseconds, mag);
+                Earthquake eq = new Earthquake(place, timeMilliseconds, mag, url);
                 earthquakes.add(eq);
             }
 
