@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -35,7 +36,8 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
         Earthquake earthquake = getItem(position);
 
-        eqMag.setText(String.valueOf(earthquake.getMagnitude()));
+
+        eqMag.setText(formatMagnitude(earthquake.getMagnitude()));
 //        String date = earthquake.getMonth() + " " + earthquake.getDay() + ", " + earthquake.getYear();
 //        eqDate.setText(date);
         Date dateObject = new Date(earthquake.getTimeMilliseconds());
@@ -80,5 +82,10 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
     private String formatTime(Date dateObject){
         SimpleDateFormat timeFormat = new SimpleDateFormat("h:mm a");
         return timeFormat.format(dateObject);
+    }
+
+    private String formatMagnitude(double magnitude){
+        DecimalFormat magnitudeFormat = new DecimalFormat("0.0");
+        return magnitudeFormat.format(magnitude);
     }
 }
