@@ -53,7 +53,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
         String offset;
         String primaryLocation;
         if (ofIndex != -1) {
-            offset = location.substring(0, ofIndex);
+            offset = location.substring(0, ofIndex + 4);
             primaryLocation = location.substring(ofIndex + 4, location.length());
         }
         else{
